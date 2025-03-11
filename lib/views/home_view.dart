@@ -36,7 +36,9 @@ class HomeView extends StatelessWidget {
                       },
                     ),
                     trailing: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        todoController.deleteTodo(index);
+                      },
                       icon: Icon(Icons.delete),
                     ),
                   );

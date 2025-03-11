@@ -5,7 +5,7 @@ class TodoController extends GetxController {
   var todoList = <TodoModel>[].obs;
 
   void addTodo(String title, String subtitle) {
-    todoList.add(TodoModel(title: title,subtitle:subtitle));
+    todoList.add(TodoModel(title: title, subtitle: subtitle));
   }
 
   void toggleTodo(int index) {
@@ -14,6 +14,6 @@ class TodoController extends GetxController {
   }
 
   void deleteTodo(int index) {
-    todoList.remove(index);
+    todoList.removeAt(index);
   }
 }
