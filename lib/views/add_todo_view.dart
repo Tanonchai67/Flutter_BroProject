@@ -31,6 +31,13 @@ class AddTodoView extends StatelessWidget {
                   subtitleController.text,
                 );
                 Get.back();
+                Get.snackbar(
+                  "แจ้งเตือน",
+                  "บันทึกเรียบร้อย",
+                  colorText: Colors.white,
+                  backgroundColor: Colors.black,
+                  snackPosition: SnackPosition.BOTTOM,
+                );
               },
               child: Text("บันทึก"),
             ),

@@ -16,4 +16,8 @@ class TodoController extends GetxController {
   void deleteTodo(int index) {
     todoList.removeAt(index);
   }
+
+  void editTodo(String title, String subtitle){
+    
+  }
 }

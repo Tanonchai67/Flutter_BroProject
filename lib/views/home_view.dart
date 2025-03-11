@@ -26,20 +26,46 @@ class HomeView extends StatelessWidget {
                 itemCount: todoController.todoList.length,
                 itemBuilder: (context, index) {
                   TodoModel todo = todoController.todoList[index];
-                  return ListTile(
-                    title: Text(todo.title),
-                    subtitle: Text(todo.subtitle),
-                    leading: Checkbox(
-                      value: todo.isDone,
-                      onChanged: (bool? newValue) {
-                        todoController.toggleTodo(index);
-                      },
+                  return Card(
+                    elevation: 5,
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 15,
                     ),
-                    trailing: IconButton(
-                      onPressed: () {
-                        todoController.deleteTodo(index);
-                      },
-                      icon: Icon(Icons.delete),
+                    child: ListTile(
+                      title: Text(todo.title),
+                      subtitle: Text(todo.subtitle),
+                      leading: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.bookmark,
+                            size: 35,
+                            color: Colors.blue[600],
+                          ),
+                          Checkbox(
+                            value: todo.isDone,
+                            onChanged: (bool? newValue) {
+                              todoController.toggleTodo(index);
+                            },
+                          ),
+                        ],
+                      ),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.edit, color: Colors.blue),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              todoController.deleteTodo(index);
+                            },
+                            icon: Icon(Icons.delete, color: Colors.red),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
