@@ -35,6 +35,7 @@ class TodoController extends GetxController {
   void deleteTodo(int index) {
     todoList.removeAt(index);
     storageService.write('todoList', todoList.toJson());
+    fetchTodos();
   }
 
   void editTodo(String title, String subtitle) {}
